@@ -15,7 +15,7 @@ const Auth = ({ setToken }) => {
     setLoading(true);
 
     try {
-      const endpoint = isLogin ? '/api/users/login' : '/api/users/register';
+      const endpoint = isLogin ? '/api/login' : '/api/register';
       const response = await api.post(endpoint, { username, password });
 
       localStorage.setItem('token', response.data.token);
